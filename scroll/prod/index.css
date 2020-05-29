@@ -1,0 +1,42 @@
+/* Other styles */
+/* ---------------------------------------------------------- */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.b1 {
+    background: blueviolet;
+}
+
+.b2 {
+    background: aqua;
+}
+
+.b3 {
+    background: yellowgreen;
+}
+
+.b4 {
+    background: cornflowerblue;
+}
+
+.b5 {
+    background: crimson;
+}
+
+.b6 {
+    background: wheat;
+}
+
+.p1-container {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+*, *:before, *:after { max-height: 100000px }

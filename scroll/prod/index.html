@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll Demo</title>
+    <!-- 必备样式 -->
+    <link rel="stylesheet" href="./remAdaptationScheme.css">
+    <script src="./remAdaptationScheme.js"></script>
+    <link rel="stylesheet" href="./scroll.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <!-- <article id="scrollWrapper">为必须的滚动容器 -->
+    <article id="scrollWrapper">
+        <!-- <section id="bgWrapper">为必须的页面背景容器 -->
+        <section id="bgWrapper">
+            <div class="bg b1"></div>
+            <div class="bg b2"></div>
+            <div class="bg b3"></div>
+        </section>
+        <!-- <section class="pageWrapper">为必须的数量不定的页面内容容器 -->
+        <section class="pageWrapper">
+            <!-- <div class="p1-container" layout-container>为页面内容容器中可选的布局容器，该容器默认宽高为父级100%,可自定义宽高和其他样式,可以嵌套使用  -->
+            <div class="p1-container" layout-container>
+                <!-- <div class="subBg b4"></div>为可选的的布局容器背景,可以放在容器任何位置，推荐放在父级元素最后一位 -->
+                <!-- 页面内容随意 -->
+                <span>flex布局</span>
+                <span>居中</span>
+                <p>p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，</p>
+                <div class="subBg b4"></div>
+            </div>
+        </section>
+
+        <section class="pageWrapper">
+            <div class="p1-container" layout-container>
+                <span>flex布局</span>
+                <span>居中</span>
+                <p>p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，</p>
+                <div class="subBg b5"></div>
+            </section>
+        <section class="pageWrapper">
+            <div class="p1-container" layout-container>
+                <span>flex布局</span>
+                <span>居中</span>
+                <p>p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，</p>
+                <div class="subBg b6"></div>
+            </section>
+    </article>
+</body>
+<!-- 滚动特效 -->
+<!-- <script src="./scroll.js"></script> -->
+<script src="../scroll.js"></script>
+</html>
