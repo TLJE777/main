@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll Demo</title>
+    <!-- 必备样式 -->
+    <link rel="stylesheet" href="./remAdaptationScheme.css">
+    <script src="./remAdaptationScheme.js"></script>
+    <link rel="stylesheet" href="./scroll.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="./index.css">
+</head>
+<style>
+    #page-container {
+        width: 100%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .page-header-container {
+        font-size: 0.21rem;
+        text-align: center;
+        /* min-width: 500px; */
+        position: fixed;
+        height: 0.46rem;
+        background: rgb(190, 68, 20);
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    .page-footer-container {
+        width: 100%;
+        height: 3.5rem;
+        background: burlywood;
+    }
+
+    .slideshow-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .slideshow-container-title {
+        color: #0c1724;
+        font-weight: bold;
+        font-size: 0.4rem;
+        line-height: 110%;
+        -webkit-font-smoothing: antialias;
+        padding: 0.3rem 0 0.45rem 0;
+        margin-bottom: 0;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .slideshow-sidemenu {
+        height: 100%;
+        width: 3.5rem;
+        background: rgb(11, 136, 115);
+    }
+
+    #slideshow-items-center {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    @media all and (max-width: 520px) {
+        .slideshow-container {
+            height: 100%;
+            width: 100%;
+            display: block !important;
+        }
+
+        .slideshow-sidemenu {
+            width: 100%;
+        }
+
+        .slideshow-content {
+            width: 100% !important;
+            display: none !important;
+        }
+
+        #slideshow-items-center {
+            display: block;
+        }
+
+        .sidemenu-tab-container::after {
+            content: '';
+            display: none !important;
+        }
+
+        .page-footer-container {
+            display: none !important;
+        }
+    }
+
+    .slideshow-sidemenu ul {
+        height: 100%;
+    }
+
+    .slideshow-sidemenu li {
+        height: 25%;
+    }
+
+    .slideshow-sidemenu li a {
+        height: 100%;
+    }
+
+    .slideshow-content {
+        height: 100%;
+        width: 7.6rem;
+        background: rgb(73, 73, 180);
+    }
+
+    .sidemenu-tabs-nav {
+        width: 100%;
+    }
+
+    .sidemenu-tabs-nav li,
+    .sidemenu-tabs-nav a {
+        width: 100%;
+    }
+
+    .sidemenu-tab-container {
+        padding: 0.24rem;
+        padding-right: 0;
+    }
+
+    .sidemenu-tab-container p {
+        font-size: 0.15rem;
+    }
+
+    .sidemenu-tab-container::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2px;
+        background-color: #dadce0;
+        height: 100%;
+    }
+
+    .sidemenu-h2 {
+        font-size: 0.21rem;
+    }
+
+
+    .image-container {
+        height: 60%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.15rem 0;
+    }
+
+    .rte-container {
+        font-size: 0.18rem;
+        height: 60%;
+    }
+</style>
+
+<body>
+    <!-- <article id="scrollWrapper">...为必须的滚动容器 -->
+    <!--    <section id="bgWrapper">...为必须的页面背景容器 -->
+    <!--    <section class="pageWrapper">...为必须的数量不定的页面内容容器 -->
+    <!--        <div class="p1-container" layout-container>...为页面内容容器中可选的布局容器，该容器默认宽高为父级100%,可自定义宽高和其他样式,可以嵌套使用  -->
+    <!--            <div class="subBg b4"></div>为可选的的布局容器背景,可以放在容器任何位置，推荐放在父级元素最后一位 -->
+    <!--            <xxx>页面内容随意 -->
+    <header class="page-header-container">
+        <h1>上导航</h1>
+    </header>
+    <div id="page-container" style="height: 900px;margin-top: 0.46rem;">
+        <article id="scrollWrapper">
+            <section id="bgWrapper">
+                <div class="bg b1"></div>
+                <div class="bg b2"></div>
+                <div class="bg b3"></div>
+            </section>
+            <section class="pageWrapper">
+                <div class="slideshow-container" layout-container>
+                    <div class="slideshow-container-title" layout-container>
+                        <span>Bring Data to Every Part of Your Organization</span>
+                    </div>
+                    <div class="container" style="margin-bottom: 0.21rem;" layout-container>
+                        <div class="row" id="slideshow-items-center" layout-container>
+                            <div class="slideshow-sidemenu col-0" layout-container>
+                                <ul class="sidemenu-tabs-nav carousel-indicators" layout-container>
+                                    <li class="active" data-target="#left-toggle-carousel" data-slide-to="0"
+                                        layout-container>
+                                        <a class="sidemenu-tab-container">
+                                            <span class="sidemenu-h2">
+                                                IT Operations
+                                            </span>
+                                            <br>
+                                            <p>
+                                                Predict and prevent problems with one unified monitoring experience
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li data-target="#left-toggle-carousel" data-slide-to="1" layout-container>
+                                        <a class="sidemenu-tab-container">
+                                            <span class="sidemenu-h2">
+                                                Security
+                                            </span>
+                                            <br>
+                                            <p>
+                                                Streamline your entire security stack with Splunk as the nerve center
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li data-target="#left-toggle-carousel" data-slide-to="2" layout-container>
+                                        <a class="sidemenu-tab-container">
+                                            <span class="sidemenu-h2">
+                                                DevOps
+                                            </span>
+                                            <br>
+                                            <p>
+                                                Detect, investigate and diagnose problems easily with end-to-end
+                                                observability
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li data-target="#left-toggle-carousel" data-slide-to="3" layout-container>
+                                        <a class="sidemenu-tab-container">
+                                            <span class="sidemenu-h2">
+                                                Business Analytics
+                                            </span>
+                                            <br>
+                                            <p>
+                                                Explore and visualize business processes for increased transparency
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="slideshow-content col-0" style="height: 120%;" layout-container>
+                                <div class="item active" style="width: 100%;" layout-container>
+                                    <div class="textImage" style="height: 4rem;" layout-container>
+                                        <div class="image-container" style="height: 100%;" layout-container>
+                                            <img style="background: rgb(156, 70, 70);height: 100%;width: 100%;">
+                                        </div>
+                                    </div>
+                                    <div class="textImage" layout-container>
+                                        <div class="rte-container" layout-container>
+                                            <p>Customer experience and business process data can be hard to parse. The
+                                                Data-to-Everything Platform, Splunk grants business leaders the ability
+                                                to interact with the data behind complex business processes and customer
+                                                experiences that often span disparate systems. Splunk discovers and
+                                                delivers insights into the patterns and performance organizations need
+                                                to improve efficiency and efficacy.<br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subBg b4"></div>
+                </div>
+            </section>
+
+            <section class="pageWrapper">
+                <div class="p1-container" layout-container>
+                    <span>flex布局</span>
+                    <span>居中</span>
+                    <p>p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，</p>
+                    <div class="subBg b5"></div>
+                </div>
+            </section>
+            <section class="pageWrapper">
+                <div class="p1-container" layout-container>
+                    <span>flex布局</span>
+                    <span>居中</span>
+                    <p>p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，p标签内部的文字，</p>
+                    <div class="subBg b6"></div>
+            </section>
+        </article>
+        <footer class="page-footer-container">
+            ....
+        </footer>
+    </div>
+</body>
+<!-- 滚动特效 -->
+<!-- <script src="./scroll.js"></script> -->
+<script src="../scroll.js"></script>
+<script>
+    const pageContainer = document.querySelector('#page-container')
+    const pageBaseFontSize = () => win.flex(66, 1)
+    const resetHeight = debounce(() => {
+        pageContainer.style.height = window.innerHeight + 'px'
+    }, 300)
+    const resetFontSize = debounce(() => {
+        pageBaseFontSize()
+    }, 300)
+    pageBaseFontSize()
+    resetHeight()
+    resetFontSize()
+    pageContainer.style.height = window.innerHeight + 'px'
+    window.onresize = () => {
+        // 小于520就算手机， windowResize只对PC端使用
+        if (window.innerWidth < 520) return
+        resetHeight()
+        resetFontSize()
+        // console.log('reset', window.innerHeight);
+        resetScrollHeight()
+    }
+</script>
+
+</html>

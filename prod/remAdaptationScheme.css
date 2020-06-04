@@ -1,0 +1,393 @@
+* {
+    box-sizing: border-box;
+    /* 在X5新内核Blink中，在排版页面的时候，会主动对字体进行放大，会检测页面中的主字体，当某一块字体在我们的判定规则中，认为字号较小，并且是页面中的主要字体，就会采取主动放大的操作。然而这不是我们想要的，可以采取给最大高度解决 */
+    max-height: 100000px;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+    max-height: 100000px;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+textarea,
+td {
+    border        : 0 none;
+    font-size     : inherit;
+    color         : inherit;
+    margin        : 0;
+    padding       : 0;
+    vertical-align: baseline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+em,
+strong {
+    font-style: normal;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+body {
+    font-family     : "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif;
+    line-height     : 1.5;
+    color           : #333;
+    background-color: #f2f2f2;
+    font-size       : 0.24rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.box {
+    position: relative;
+    margin  : 0 auto;
+}
+
+.navRoot {
+    position  : fixed;
+    z-index   : 50;
+    bottom    : 0;
+    left      : 0;
+    width     : 100%;
+    height    : 1rem;
+    display   : flex;
+    border-top: 0.01rem solid #ccc;
+    background: #f2f2f2;
+}
+
+.navLink {
+    font-size      : 0.42rem;
+    flex           : auto;
+    display        : flex;
+    flex-direction : column;
+    flex-wrap      : wrap;
+    justify-content: center;
+    align-items    : center;
+    line-height    : 1;
+    color          : #666;
+}
+
+.navLink.active {
+    color: #1abc9c
+}
+
+.navLinkIco {
+    display      : block;
+    margin-bottom: 0.1rem;
+}
+
+.navLinkText {
+    display    : block;
+    line-height: 1;
+    font-size  : 0.24rem;
+}
+
+.img-responsive {
+    width: 100%;
+}
+
+/* 栅栏布局 
+/* ---------------------------------------------------------- */
+
+.container {
+    width  : 100%;
+    padding: 15px;
+    margin : 0 15px;
+    box-sizing: border-box;
+}
+
+.row:before,
+.row:after {
+    content: " ";
+    display: table;
+    clear  : both;
+}
+
+.row {
+    margin : -15px;
+    width  : 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
+[class*='col-'] {
+    position  : relative;
+    float     : left;
+    min-height: 1px;
+    padding   : 0 15px;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.col-11 {
+    width: 91.66666667%;
+}
+
+.col-10 {
+    width: 83.33333333%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-8 {
+    width: 66.66666667%;
+}
+
+.col-7 {
+    width: 58.33333333%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-5 {
+    width: 41.66666667%;
+}
+
+.col-4 {
+    width: 33.33333333%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-2 {
+    width: 16.66666667%;
+}
+
+.col-1 {
+    width: 8.33333333%;
+}
+
+.container* {
+    box-sizing : border-box;
+    width      : 100%;
+    overflow: hidden;
+}
+
+.col-offset-12 {
+    margin-left: 100%;
+}
+
+.col-offset-11 {
+    margin-left: 91.66666667%;
+}
+
+.col-offset-10 {
+    margin-left: 83.33333333%;
+}
+
+.col-offset-9 {
+    margin-left: 75%;
+}
+
+.col-offset-8 {
+    margin-left: 66.66666667%;
+}
+
+.col-offset-7 {
+    margin-left: 58.33333333%;
+}
+
+.col-offset-6 {
+    margin-left: 50%;
+}
+
+.col-offset-5 {
+    margin-left: 41.66666667%;
+}
+
+.col-offset-4 {
+    margin-left: 33.33333333%;
+}
+
+.col-offset-3 {
+    margin-left: 25%;
+}
+
+.col-offset-2 {
+    margin-left: 16.66666667%;
+}
+
+.col-offset-1 {
+    margin-left: 8.33333333%;
+}
+
+/* @media all and (max-width:960px) {
+    .col-12 {
+        width: 100%;
+    }
+
+    .col-11 {
+        width: 100%;
+    }
+
+    .col-10 {
+        width: 100%;
+    }
+
+    .col-9 {
+        width: 100%;
+    }
+
+    .col-8 {
+        width: 100%;
+    }
+
+    .col-7 {
+        width: 100%;
+    }
+
+    .col-6 {
+        width: 100%;
+    }
+
+    .col-5 {
+        width: 83.33333333%;
+    }
+
+    .col-4 {
+        width: 66.66666667%;
+    }
+
+    .col-3 {
+        width: 50%;
+    }
+
+    .col-2 {
+        width: 33.33333333%;
+    }
+
+    .col-1 {
+        width: 16.66666667%;
+    }
+} */
+
+/* @media all and (max-width:640px) {
+
+    .col-12 {
+        width: 100%;
+    }
+
+    .col-11 {
+        width: 100%;
+    }
+
+    .col-10 {
+        width: 100%;
+    }
+
+    .col-9 {
+        width: 100%;
+    }
+
+    .col-8 {
+        width: 100%;
+    }
+
+    .col-7 {
+        width: 100%;
+    }
+
+    .col-6 {
+        width: 100%;
+    }
+
+    .col-5 {
+        width: 100%;
+    }
+
+    .col-4 {
+        width: 100%;
+    }
+
+    .col-3 {
+        width: 100%;
+    }
+
+    .col-2 {
+        width: 66.66666667%;
+    }
+
+    .col-1 {
+        width: 50%;
+    }
+} */
